@@ -9,43 +9,33 @@ public class B_2839 {
 		int N = scan.nextInt();
 		scan.close();
 
-		System.out.println(solution(N));
-
-	}
-
-	public static int solution(int N) {
-		int answer = 0;
-		int val = N;
-		int count = 0;
-		
-		if(N<0) {
-			answer = -1;
+		if (N < 3 || N > 5000) {// 입력값 조건
+			System.out.println(-1);
+			return;
 		}
-		
-		
-		if (N % 5 == 0) { // N이 5의 배수 일 때 
-			answer = N / 5;
-		} else if (N % 3 == 0) {// N이 3의 배수 일 때 
-			answer = N / 3;
-		} else {
-			
-			while(val > 0) {
-				val = N-5;
-				count ++;
-				
-				if(val%3 == 0 ) {
-					answer = count + val/3;
-					break;
-				}else {
-					answer = -1;
-					break;
+
+		if (N % 5 == 0) {// 1) N이 5의 배수일 때
+			System.out.println(N / 5);
+			return;
+		} else {// 2) N이 5의 배수가 아닐 때는 N에서 5의 배수를 차례대로 빼면서 3으로 나눠지는지 확인 
+			int divide = N / 5;
+
+			for (int i = divide; i > 0; i--) {
+				int val = N - 5 * i;
+				if (val % 3 == 0) {
+					System.out.println(i + val / 3);
+					return;
 				}
 			}
-			
 		}
-		
 
-		return answer;
+		if (N % 3 == 0) {// 3) N이 3의 배수 일 때 
+			System.out.println(N / 3);
+		} else {// N이 1~3 어느 케이스에도 속하지 않을 때 
+			System.out.println(-1);
+		}
+		return;
+
 	}
 
 }
