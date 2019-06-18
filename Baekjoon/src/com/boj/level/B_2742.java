@@ -1,19 +1,16 @@
-package level.java;
+package com.boj.level;
 
 import java.util.Scanner;
 
-public class B_8393 {
+public class B_2742 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		int sum = 0;
 
-		for (int i = 1; i <= N; i++) {
-			sum += i;
+		for(int i=N; i>0; i--) {
+			System.out.println(i);
 		}
-
-		System.out.println(sum);
 	}
 
 }

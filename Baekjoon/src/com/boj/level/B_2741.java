@@ -1,14 +1,14 @@
-package level.java;
+package com.boj.level;
 
 import java.util.Scanner;
 
-public class B_2742 {
+public class B_2741 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 
-		for(int i=N; i>0; i--) {
+		for(int i=1; i<=N; i++) {
 			System.out.println(i);
 		}
 	}

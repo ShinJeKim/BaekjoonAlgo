@@ -1,4 +1,4 @@
-package level.java;
+package com.boj.level;
 
 import java.util.Scanner;
 
